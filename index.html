@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center bg-black h-screen">
+
+    <!--Form for Test-->
+    <form id="form" class="p-10 mt-10" action="">
+        <div>
+            <label for="firstName" class="text-4xl text-orange-400">First Name</label><br>
+            <input id="firstName" type="text" class="w-[240px] h-[50px] text-3xl">
+        </div>
+        <div class="pt-4">
+            <label for="lastName" class="text-4xl text-orange-400">Last Name</label><br>
+            <input id="lastName" type="text" class="w-[240px] h-[50px] text-3xl">
+        </div>
+        <div class="pt-6">
+            <button type="submit" class="border-1 p-1 inline-block bg-orange-400
+                rounded-md text-2xl">Next Page</button>
+        </div>
+    </form>
+    
+    <script>
+        const form = document.getElementById('form');
+        const firstName = document.getElementById('firstName');
+        const lastName = document.getElementById('lastName');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const firstNameValue = firstName.value;
+            const lastNameValue = lastName.value;
+
+            localStorage.setItem('first-name', firstNameValue);
+            localStorage.setItem('last-name', lastNameValue);
+
+            window.location.href = "next.html";
+        })
+    </script>
+</body>
+</html>

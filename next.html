@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieved Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen w-screen  flex flex-col items-center 
+            justify-center bg-black gap-9">
+
+   <header class="flex justify-center">
+
+    <h1 class="mt-40 text-gray-300 text-6xl">
+        Data from Local Storage
+    </h1> 
+   </header> 
+
+   <main class="h-[500px] w-[300px] flex flex-col items-center gap-3">
+        <!--The data to appear-->
+        <div class="text-4xl text-orange-400">
+            First Name: <br> 
+            <span id="first-name" class="text-white text-3xl"></span>
+        </div>
+        <div class="text-4xl text-orange-400">
+            Last Name: <br> 
+            <span id="last-name" class="text-white text-3xl"></span>
+        </div>
+        <div>
+            <a href="index.html" class="rounded-lg inline-block w-[300px] bg-orange-400
+            text-3xl p-1 h-[40px] flex justify-center">Home</a>
+        </div>
+   </main>
+    <script>
+        const firstName = localStorage.getItem('first-name');
+        const lastName = localStorage.getItem('last-name');
+
+        document.getElementById('first-name').textContent = firstName;
+        document.getElementById('last-name').textContent = lastName;
+    </script>
+</body>
+</html>
